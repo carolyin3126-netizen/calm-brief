@@ -155,6 +155,7 @@
   .compact-table{font-size:12px;margin-top:12px}.compact-table th,.compact-table td{padding:9px 10px}
   .split3{display:grid;grid-template-columns:1.05fr .95fr;gap:16px;margin-top:16px;align-items:start}
   .metricgrid{display:grid;grid-template-columns:repeat(5,1fr);gap:10px;margin-top:12px}
+  .metric-grid{display:grid;grid-template-columns:repeat(5,1fr);gap:10px;margin-top:12px}
   .metric{background:#fff;border:1px solid var(--line);border-radius:12px;padding:12px 10px;box-shadow:var(--shadow-sm);font-size:12px;color:var(--mut);line-height:1.4}
   .metric b{display:block;color:var(--teal);font-size:12.5px;margin-bottom:4px}
   .timeline{display:grid;grid-template-columns:repeat(5,1fr);gap:12px;margin-top:18px}
@@ -172,6 +173,7 @@
   .path{display:flex;gap:8px;align-items:center;flex-wrap:wrap;margin-top:16px}
   .path .node{background:#fff;border:1px solid var(--line);border-radius:999px;padding:8px 13px;font-size:12.5px;font-weight:800;color:var(--ink);box-shadow:var(--shadow-sm)}
   .path .arr{color:var(--teal);font-weight:800}
+  .box ul{margin:6px 0 0 18px;color:var(--ink);font-size:clamp(14px,1.35vw,16px);line-height:1.75;font-weight:600}
   .dense{padding-top:48px;padding-bottom:48px}
   .dense h2{font-size:clamp(22px,3vw,34px);margin-bottom:12px}
   .dense .lead{font-size:clamp(15px,1.55vw,18px)}
@@ -180,7 +182,7 @@
   .dense .grid2,.dense .grid3,.dense .twocol{gap:12px;margin-top:14px}
   .dense .codeblk{font-size:11.2px;padding:12px 14px;line-height:1.5}
   .dense table{margin-top:10px}
-  @media(max-width:820px){.fcsplit,.fcbranch,.suppgrid,.mini-list,.split3,.metricgrid,.timeline,.duo{grid-template-columns:1fr}.vs{grid-template-columns:1fr}.vsmid{font-size:18px}}
+  @media(max-width:820px){.fcsplit,.fcbranch,.suppgrid,.mini-list,.split3,.metricgrid,.metric-grid,.timeline,.duo{grid-template-columns:1fr}.vs{grid-template-columns:1fr}.vsmid{font-size:18px}}
   @media(max-width:820px){.grid2,.grid3,.stat,.twocol{grid-template-columns:1fr}.slide{padding:54px 24px}.dense{padding:42px 24px}table{font-size:12px}.farrowx{transform:rotate(90deg);min-height:14px}}
 </style>
 </head>
@@ -191,12 +193,12 @@
 <section class="slide hero">
   <span class="sn">01 / 10</span>
   <span class="kick">Shokz · Calm Brief / 耳边简报</span>
-  <h1>Calm Brief:面向开放式耳机的 AI 通知分流与一句话播报</h1>
-  <p class="lead" style="margin-top:18px"><strong>不是让耳机读出更多通知,而是让耳机判断:这一刻,什么信息值得进入耳朵。</strong></p>
-  <p class="lead mut" style="margin-top:16px">我想探索的是:对于几乎一整天都在佩戴开放式耳机的用户,耳机能否在他们不方便看手机时,成为一个更懂场景、更低打扰的耳边提醒入口。</p>
-  <div class="box" style="max-width:880px"><div class="l">核心定位</div><p>Calm Brief 不替代手机通知中心。手机负责信息供给,耳机负责最后一厘米的打断决策。</p></div>
+  <h1>Calm Brief：面向开放式耳机的 AI 通知分流与一句话播报</h1>
+  <p class="lead" style="margin-top:18px"><strong>不是让耳机读出更多通知，而是让耳机判断：这一刻，什么信息值得进入耳朵。</strong></p>
+  <p class="lead mut" style="margin-top:16px">我想探索的是：对于几乎一整天都在佩戴开放式耳机的用户，耳机能否在他们不方便看手机时，成为一个更懂场景、更低打扰的耳边提醒入口。</p>
+  <div class="box" style="max-width:880px"><div class="l">核心定位</div><p>Calm Brief 不替代手机通知中心。手机负责信息供给，耳机负责最后一厘米的打断决策。</p></div>
   <div style="margin-top:22px">
-    <span class="pill">开放式耳机</span><span class="pill">长时间佩戴</span><span class="pill">通知分流</span><span class="pill">一句话播报</span><span class="pill">低打扰提醒</span>
+    <span class="pill">开放式耳机</span><span class="pill">长时间佩戴</span><span class="pill">通知分流</span><span class="pill">5–8 秒一句话播报</span><span class="pill">低打扰提醒</span>
   </div>
 </section>
 
@@ -204,38 +206,38 @@
 <section class="slide">
   <span class="sn">02 / 10</span>
   <span class="kick">目标用户</span>
-  <h2>我关注的不是偶尔戴耳机的人,而是全天佩戴开放式耳机的人</h2>
-  <p class="lead mut">核心用户是一类几乎一整天都在佩戴开放式耳机的人。早上通勤会戴,白天办公可能也会戴,晚上运动时还会继续戴。对他们来说,耳机已经不只是播放音乐的设备,而是长期贴近身体、陪伴他们切换一天场景的随身设备。</p>
+  <h2>我关注的不是偶尔戴耳机的人，而是全天佩戴开放式耳机的人</h2>
+  <p class="lead mut">这类用户早上通勤戴，白天办公戴，晚上运动还在戴。对他们来说，耳机已经不只是播放音乐的设备，而是长期贴近身体、陪他们切换一天场景的随身设备。</p>
   <div class="grid3">
-    <div class="card"><span class="ic">🕐</span><div class="h3">全天在场</div><p class="cap">耳机佩戴时间长,通知确实会持续进入耳边。</p></div>
+    <div class="card"><span class="ic">🕐</span><div class="h3">全天在场</div><p class="cap">耳机佩戴时间长，通知确实会持续进入耳边。</p></div>
     <div class="card"><span class="ic">💬</span><div class="h3">消息高频</div><p class="cap">工作、社交、日程、验证码、群消息混杂出现。</p></div>
-    <div class="card"><span class="ic">🔄</span><div class="h3">场景切换多</div><p class="cap">通勤、办公、开会、运动不断切换,不同场景对打扰的容忍度完全不同。</p></div>
+    <div class="card"><span class="ic">🔄</span><div class="h3">场景切换多</div><p class="cap">通勤、办公、开会、运动不断切换，不同场景对打扰的容忍度完全不同。</p></div>
   </div>
-  <div class="box"><div class="l">Persona</div><p>26 岁,互联网产品实习生 / 职场新人;每天通勤 + 办公 + 运动都戴开放式耳机;消息多,但不想一直看手机。需求不是"听到所有通知",而是"真正重要的通知不要被错过"。</p></div>
+  <div class="box"><div class="l">Persona</div><p>高频消息型职场用户 / 通勤办公人群。每天通勤、办公、运动都佩戴开放式耳机；消息多，但不想一直看手机。这类用户的需求不是“听到所有通知”，而是“真正重要的通知不要被错过”。</p></div>
 </section>
 
 <!-- 03 一天场景 -->
 <section class="slide">
   <span class="sn">03 / 10</span>
   <span class="kick">一天场景</span>
-  <h2>一天中,总有很多时刻不方便看手机</h2>
-  <p class="lead mut">用户不是不想看手机,而是在很多真实场景下不适合看手机。通勤时眼睛要看路,运动时双手和注意力被占用,开会时不适合处理私人消息,专注工作时又不希望被无关通知打断。</p>
+  <h2>一天中，总有很多时刻不方便看手机</h2>
+  <p class="lead mut">用户不是不想看手机，而是在很多真实场景下不适合看：通勤要看路，运动时双手和注意力被占用，开会不适合处理私人消息，专注工作又不想被无关通知打断。</p>
   <div class="timeline">
     <div class="timeitem"><div class="time">08:30</div><div class="scene">通勤走路 / 骑行</div><p>眼睛要看路。只想听导航、会议变更、紧急消息。</p></div>
     <div class="timeitem"><div class="time">10:30</div><div class="scene">专注办公</div><p>刚进入工作心流。不希望群聊、广告打断。</p></div>
     <div class="timeitem"><div class="time">15:00</div><div class="scene">开会</div><p>不适合看手机或外放隐私内容。非紧急消息保持安静。</p></div>
     <div class="timeitem"><div class="time">18:30</div><div class="scene">运动</div><p>双手和注意力被占用。家人 / 紧急消息可以短播。</p></div>
-    <div class="timeitem"><div class="time">21:30</div><div class="scene">回家路上</div><p>想确认是否漏掉重要事项。只回顾真正重要的信息。</p></div>
+    <div class="timeitem"><div class="time">21:30</div><div class="scene">回家路上</div><p>如果有错过的高优先级通知，只做一句提醒。</p></div>
   </div>
-  <div class="formula"><b>不方便看手机,不代表用户不需要信息。</b> 真正的问题是:此刻哪些信息值得进入耳朵?</div>
+  <div class="formula"><b>不方便看手机，不代表用户不需要信息。</b> 真正的问题是：此刻哪些信息值得进入耳朵？</div>
 </section>
 
 <!-- 04 核心痛点 -->
 <section class="slide">
   <span class="sn">04 / 10</span>
   <span class="kick">核心痛点</span>
-  <h2>不播会错过,乱播又打扰</h2>
-  <p class="lead mut">对全天佩戴开放式耳机的用户来说,通知管理存在一个矛盾:关闭语音播报,可能错过会议变更、家人消息、紧急工作通知;打开语音播报,又可能被广告、验证码、群聊闲谈反复打断。</p>
+  <h2>不播会错过，乱播又打扰</h2>
+  <p class="lead mut">对全天佩戴开放式耳机的用户来说，通知管理存在一个矛盾——而现有播报的问题不是没有声音，而是没有判断。</p>
   <div class="vs">
     <div class="vscard">
       <div class="h3">关闭播报</div>
@@ -257,105 +259,107 @@
       </ul>
     </div>
   </div>
-  <div class="box"><div class="l">核心矛盾</div><p>用户真正想要的不是"全开"或"全关",而是"只让值得的通知进入耳朵"。现有语音播报的问题不是没有声音,而是没有判断。它把手机屏幕上的信息过载,转移成了耳朵里的听觉过载。<span class="ev">[X1][A1][S1]</span></p></div>
+  <div class="box"><div class="l">核心矛盾</div><p>用户真正想要的不是“全开”或“全关”，而是“只让值得的通知进入耳朵”。把“看的过载”变成“听的过载”，不是解决问题，而是换了一种方式打扰用户。<span class="ev">[X1][A1][S1]</span></p></div>
 </section>
 
 <!-- 05 现有方案缺口 -->
 <section class="slide dense">
   <span class="sn">05 / 10</span>
   <span class="kick">现有方案缺口</span>
-  <h2>能控制哪个 App 播,却很难判断哪一条值得播</h2>
-  <p class="lead mut">现有语音播报通常依赖 App 开关、时间段、专注模式或系统规则。这些方式能减少一部分打扰,但大多停留在"哪些 App 可以播"的层面,无法判断同一个 App 里的单条消息到底重不重要。</p>
+  <h2>能控制哪个 App 播，却很难判断哪一条值得播</h2>
+  <p class="lead mut">现有语音播报多依赖 App 开关、时间段、专注模式或系统规则。它们能减少一部分打扰，但大多停留在“哪些 App 可以播”的层面，无法判断同一个 App 里的单条消息到底重不重要。</p>
   <table class="compact-table">
     <thead><tr><th>现有方式</th><th>能解决什么</th><th>解决不了什么</th></tr></thead>
     <tbody>
-      <tr><td><b>App 级通知开关</b></td><td>控制哪些 App 可以播报</td><td>同一个 App 内,广告、群聊、紧急消息仍混在一起</td></tr>
+      <tr><td><b>App 级通知开关</b></td><td>控制哪些 App 可以播报</td><td>同一个 App 内，广告、群聊、紧急消息仍混在一起</td></tr>
       <tr><td><b>时间段 / 专注模式</b></td><td>控制什么时候减少打扰</td><td>无法识别紧急消息例外</td></tr>
       <tr><td><b>联系人白名单</b></td><td>保证重要联系人可触达</td><td>无法判断具体消息是否紧急、是否适合播正文</td></tr>
       <tr><td><b>逐条语音播报</b></td><td>用户不用看屏幕也能知道通知</td><td>容易造成听觉过载和隐私尴尬 <span class="ev">[C1][P1][S1]</span></td></tr>
-      <tr><td><b>屏幕端 AI 摘要</b></td><td>能总结通知内容</td><td>输出仍主要在屏幕,不一定适合耳机场景 <span class="ev">[C2][C3]</span></td></tr>
+      <tr><td><b>屏幕端 AI 摘要</b></td><td>能总结通知内容</td><td>输出仍主要在屏幕，不一定适合耳机场景 <span class="ev">[C2][C3]</span></td></tr>
     </tbody>
   </table>
-  <div class="concl">Calm Brief 的差异点,是把控制颗粒度从"<span class="hl2">哪个 App 能播</span>",推进到"<span class="hl2">这条通知此刻值不值得播</span>"。</div>
-  <p class="imgnote">AirPods / Pixel Buds / Galaxy Buds 等方案可作为参照,但这页不做竞品堆砌;重点是抽象出单条通知级判断的缺口。</p>
+  <div class="concl">Calm Brief 的差异点，是把控制颗粒度从“<span class="hl2">哪个 App 能播</span>”，推进到“<span class="hl2">这条通知此刻值不值得播</span>”。</div>
+  <p class="imgnote">这不是简单增加一个播报开关，而是把判断单位从 App 级推进到单条通知级。</p>
 </section>
 
 <!-- 06 第一性原理 -->
 <section class="slide hero">
   <span class="sn">06 / 10</span>
   <span class="kick">第一性原理</span>
-  <h2>什么信息值得进入耳朵?</h2>
-  <p class="lead mut">用户真正需要的不是听到更多通知,而是在不看屏幕、不被打断的情况下,知道真正重要的事。所以 Calm Brief 的核心不是"生成摘要",而是判断"这条通知此刻是否值得打断用户"。</p>
+  <h2>什么信息值得进入耳朵？</h2>
+  <p class="lead mut">用户真正需要的不是听到更多通知，而是在不看屏幕、不被打断的情况下，知道真正重要的事。所以 Calm Brief 的核心不是“生成摘要”，而是判断“这条通知此刻是否值得打断用户”。</p>
   <div class="formula" style="font-size:clamp(20px,2.8vw,32px)">
     <b>是否值得播报</b><br>
     = 信息重要性 + 时间敏感性 + 与用户相关性<br>
-    - 当前打断成本 - 隐私风险
+    − 当前打断成本 − 隐私风险
   </div>
+  <p class="imgnote">这是产品判断框架，不是精确数学公式，用来帮助团队明确“什么信息值得打断用户”。</p>
   <div class="mini-list">
     <div class="mini"><b>信息重要性</b><span>是否涉及工作、家人、安全、日程等高价值事项。</span></div>
     <div class="mini"><b>时间敏感性</b><span>是否需要马上知道或马上行动。</span></div>
-    <div class="mini"><b>与用户相关性</b><span>是否直接点名用户,是否来自重要联系人。</span></div>
-    <div class="mini"><b>当前打断成本</b><span>用户是否正在开会、运动、通勤、专注工作。</span></div>
+    <div class="mini"><b>与用户相关性</b><span>是否直接点名用户，是否来自重要联系人。</span></div>
+    <div class="mini"><b>当前打断成本</b><span>用户是否处于开会、运动、通勤、专注工作等不适合被打断的状态。</span></div>
     <div class="mini"><b>隐私风险</b><span>是否不适合直接在耳边读出正文。</span></div>
   </div>
-  <div class="box"><div class="l">判断标准</div><p>我不是从"竞品有什么功能"倒推,而是从用户在真实世界中的注意力分配出发,重新定义耳机播报的判断标准。</p></div>
+  <div class="box"><div class="l">判断标准</div><p>我不是从“竞品有什么功能”倒推，而是从用户在真实世界中的注意力分配出发，重新定义耳机播报的判断标准。</p></div>
 </section>
 
 <!-- 07 为什么适合韶音 -->
 <section class="slide dense">
   <span class="sn">07 / 10</span>
   <span class="kick">为什么适合韶音</span>
-  <h2>为什么这件事适合韶音做?</h2>
-  <p class="lead mut">手机知道通知内容,但不一定知道用户此刻是否适合被耳朵打断。开放式耳机更接近用户的真实使用场景:它知道用户是否正在佩戴、是否运动、是否正在使用耳机,也更适合承担最后一厘米的耳边提醒判断。</p>
+  <h2>为什么这件事适合韶音做？</h2>
+  <p class="lead mut">手机知道通知内容，但不一定知道用户此刻是否适合被耳朵打断。开放式耳机更接近用户的真实使用场景，可以结合佩戴状态、运动状态、使用状态，以及手机侧日程 / 时间段 / 用户手动模式，辅助判断当前是否适合打断。</p>
   <div class="duo">
-    <div class="duocard"><div class="role">PHONE</div><div class="h3">手机负责信息供给</div><p class="cap">通知内容、App 来源、发件人、时间、系统状态都首先来自手机。</p></div>
-    <div class="duocard" style="border-color:#cdeee6;background:linear-gradient(180deg,var(--teal-soft),#fff)"><div class="role">OPEN-EAR HEADPHONE</div><div class="h3">耳机负责最后一厘米的打断决策</div><p class="cap">结合佩戴、运动和使用状态,判断此刻是否适合把信息送到耳边。</p></div>
+    <div class="duocard"><div class="role">PHONE</div><div class="h3">手机负责信息供给</div><p class="cap">手机知道通知内容，但不一定知道用户此刻是否适合被耳朵打断。负责信息供给。</p></div>
+    <div class="duocard" style="border-color:#cdeee6;background:linear-gradient(180deg,var(--teal-soft),#fff)"><div class="role">OPEN-EAR HEADPHONE</div><div class="h3">耳机负责最后一厘米的打断决策</div><p class="cap">开放式耳机更接近用户的真实使用场景。它可以结合佩戴状态、运动状态、使用状态，以及手机侧日程 / 时间段 / 用户手动模式，辅助判断当前是否适合打断。</p></div>
   </div>
   <table class="compact-table">
     <thead><tr><th>韶音优势</th><th>对 Calm Brief 的意义</th></tr></thead>
     <tbody>
-      <tr><td><b>开放式佩戴</b></td><td>不隔绝环境,适合通勤、办公、走路、运动等真实世界场景</td></tr>
+      <tr><td><b>开放式佩戴</b></td><td>不隔绝环境，适合通勤、办公、走路、运动等真实世界场景</td></tr>
       <tr><td><b>长时间在场</b></td><td>有机会覆盖用户一天中多个不方便看手机的时刻</td></tr>
-      <tr><td><b>贴近声音入口</b></td><td>适合做 5-8 秒的一句话提醒,而不是长内容消费</td></tr>
-      <tr><td><b>佩戴 / 运动信号</b></td><td>可作为判断当前是否适合打断的低风险场景信号</td></tr>
+      <tr><td><b>贴近声音入口</b></td><td>适合做 5–8 秒的一句话提醒，而不是长内容消费</td></tr>
+      <tr><td><b>佩戴 / 运动等低风险信号</b></td><td>可作为判断当前是否适合打断的辅助依据，不承诺 100% 场景识别</td></tr>
       <tr><td><b>日常开放式产品线</b></td><td>OpenFit / OpenDots / OpenComm 更适合验证通知管理价值</td></tr>
     </tbody>
   </table>
-  <div class="box"><div class="l">产品边界</div><p>这不是把入耳耳机的功能复制一遍。Calm Brief 不追求让耳机更主动、更能聊,而是让耳机更懂场合:不重要的不说,重要的说短,不确定就降级。</p></div>
+  <div class="box"><div class="l">产品边界</div><p>这不是把入耳耳机的功能复制一遍。Calm Brief 不追求让耳机更主动、更能聊，而是让耳机更懂场合：不重要的不说，重要的说短，不确定就降级。</p></div>
 </section>
 
 <!-- 08 产品定义 -->
 <section class="slide dense">
   <span class="sn">08 / 10</span>
   <span class="kick">Calm Brief 产品定义</span>
-  <h2>Calm Brief P0:通知分流 + 一句话播报</h2>
-  <p class="lead mut">Calm Brief 不是长简报,也不是语音回复助手。它的 P0 只验证一个核心假设:AI 能不能比系统规则更准确地判断"这条通知该不该进入耳朵"。</p>
+  <h2>Calm Brief P0：通知分流 + 一句话播报</h2>
+  <p class="lead mut">它不是长内容播报，也不是语音回复助手。P0 只验证一个核心假设：AI 能不能比系统规则更准确地判断“这条通知该不该进入耳朵”。第一版只做三类输出动作。</p>
   <table class="compact-table">
     <thead><tr><th>动作</th><th>说明</th><th>示例</th></tr></thead>
     <tbody>
-      <tr><td><b>静默暂存</b></td><td>不立即播报,保留在手机通知中</td><td>广告、验证码、普通群消息</td></tr>
-      <tr><td><b>立即播报</b></td><td>用 5-8 秒播一句关键内容</td><td>"张经理提醒你,3 点会议提前到 2 点半"</td></tr>
-      <tr><td><b>只播来源</b></td><td>不读正文,只提醒来源</td><td>"你收到一条来自妈妈的消息"</td></tr>
+      <tr><td><b>静默暂存</b></td><td>不立即播报，保留在手机通知中</td><td>广告、验证码、普通群消息</td></tr>
+      <tr><td><b>立即播报</b></td><td>用 5–8 秒播一句关键内容</td><td>“张经理提醒你，3 点会议提前到 2 点半”</td></tr>
+      <tr><td><b>只播来源</b></td><td>不读正文，只提醒来源</td><td>“你收到一条来自妈妈的消息”</td></tr>
     </tbody>
   </table>
+  <div class="box"><div class="l">P0 默认保守策略</div><p>宁可少播，不要乱播。只有重要性高、时间敏感、隐私风险低、模型置信度足够高的通知，才会进入一句话播报；否则静默、暂存，或只播来源。</p></div>
   <div class="grid2">
     <div class="card" style="border-color:#b9efe2;background:linear-gradient(180deg,var(--teal-soft),#fff)">
       <div class="h3" style="color:var(--teal)">P0 做什么</div>
-      <p class="cap">安卓优先验证 · 先接入 1-2 个高频消息类 App · 通知语义判断 · 低价值通知静默 · 重要信息一句话播报 · 重要联系人白名单 · 高隐私或低置信度时只播来源。</p>
+      <p class="cap">安卓优先验证 · 先接入 1–2 个高频消息类 App · 通知语义判断 · 低价值通知静默 · 重要信息一句话播报 · 重要联系人白名单 · 高隐私或低置信度时只播来源</p>
     </div>
     <div class="card">
       <div class="h3" style="color:var(--red)">P0 不做什么</div>
-      <p class="cap">不做 30 分钟长简报 · 不做语音回复 · 不做全 App 全量接入 · 不做完整 AI 助手 · 不持续采集环境音 · 不自动处理消息 · 不保存完整聊天记录。</p>
+      <p class="cap">不做长内容播报 · 不做语音回复 · 不做全 App 全量接入 · 不做完整 AI 助手 · 不持续录环境音 · 不自动处理消息 · 不保存完整聊天记录</p>
     </div>
   </div>
-  <div class="box"><div class="l">MVP 价值</div><p>P0 的价值不是"功能完整",而是验证最小闭环:AI 判断后播报,是否真的能减少无效打扰。</p></div>
+  <div class="box"><div class="l">MVP 价值</div><p>P0 的价值不是“功能完整”，而是验证最小闭环：AI 判断后播报，是否真的能减少无效打扰。</p></div>
 </section>
 
 <!-- 09 技术方案与隐私边界 -->
 <section class="slide dense">
   <span class="sn">09 / 10</span>
   <span class="kick">技术方案与隐私边界</span>
-  <h2>如何判断是否打断:规则快筛 + AI 语义判断 + 场景信号</h2>
+  <h2>如何判断是否打断：规则快筛 + AI 语义判断 + 场景信号辅助</h2>
   <div class="split3">
     <div>
       <div class="fcbox core">
@@ -369,10 +373,10 @@
         </div>
       </div>
       <div class="mini-list" style="grid-template-columns:1fr 1fr;margin-top:12px">
-        <div class="mini"><b>通知进入</b><span>采集通知来源、发件人、文本、时间。P0 优先安卓侧验证,不对 iOS 能力做过度承诺。</span></div>
-        <div class="mini"><b>规则快筛</b><span>先过滤明显低价值内容,例如广告、验证码、系统促销、低价值群消息。</span></div>
-        <div class="mini"><b>AI 语义判断</b><span>判断是否需要行动、有时间压力、来自重要联系人、与用户本人相关。</span></div>
-        <div class="mini"><b>场景信号融合</b><span>结合佩戴、运动、时间段、日程/会议和用户手动模式;作为低风险信号辅助判断。</span></div>
+        <div class="mini"><b>通知进入</b><span>用户授权后，采集通知来源、发件人、通知文本、时间等必要信息。P0 优先安卓侧验证，不对 iOS 能力做过度承诺。</span></div>
+        <div class="mini"><b>规则快筛</b><span>先过滤明显低价值内容，例如广告、验证码、系统促销、低价值群消息。</span></div>
+        <div class="mini"><b>AI 语义判断</b><span>判断通知是否需要用户行动、是否有明确时间压力、是否来自重要联系人、是否与用户本人直接相关、是否适合被压缩成一句话。</span></div>
+        <div class="mini"><b>场景信号融合</b><span>结合佩戴状态、运动状态、时间段、日程 / 会议状态、用户手动模式等低风险信号辅助判断；不承诺 100% 识别用户场景。</span></div>
       </div>
     </div>
     <div>
@@ -386,38 +390,50 @@
   <span class="k">"confidence"</span>: <span class="v">0.86</span>,
   <span class="k">"privacy_level"</span>: <span class="v">"low"</span>
 }</div>
-        <p class="cap" style="margin-top:10px">模型不直接决定"读全文",而是输出结构化判断结果。只有 should_interrupt=true、confidence 足够高、privacy_level 不高时,才进入一句话播报;否则静默、暂存,或降级为只播来源。</p>
+        <p class="cap" style="margin-top:10px">模型不直接决定“读全文”，而是输出结构化判断结果。只有 should_interrupt=true、confidence 足够高、privacy_level 不高时，才进入一句话播报；否则静默、暂存，或降级为只播来源。</p>
       </div>
     </div>
   </div>
-  <div class="box"><div class="l">P0 原则:宁可少播,不要乱播</div><p>敏感 App 默认不读正文;会议 / 专注状态下默认更严格;低置信度只播来源,不总结正文;高隐私内容只提示"来自 X 的一条消息";不保存完整聊天记录;用户可设置重要联系人白名单和隐私黑名单;所有播报支持后续反馈:该播 / 不该播 / 太长 / 涉隐私。</p></div>
+  <div class="box"><div class="l">P0 原则：宁可少播，不要乱播</div>
+    <ul>
+      <li>用户授权后才读取必要通知信息；</li>
+      <li>敏感 App 默认不读正文；</li>
+      <li>会议 / 专注状态下默认更严格；</li>
+      <li>低置信度只播来源，不总结正文；</li>
+      <li>高隐私内容只提示“来自 X 的一条消息”；</li>
+      <li>不保存完整聊天记录；</li>
+      <li>用户可设置重要联系人白名单和隐私黑名单；</li>
+      <li>所有播报支持后续反馈：该播 / 不该播 / 太长 / 涉隐私。</li>
+    </ul>
+  </div>
 </section>
 
 <!-- 10 MVP 验证与总结 -->
 <section class="slide hero dense">
   <span class="sn">10 / 10</span>
   <span class="kick">MVP 验证与总结</span>
-  <h2>如何验证 Calm Brief 是否真的有价值?</h2>
-  <p class="lead mut">Calm Brief 的成功不应该只看"播报了多少条",而要看它是否减少了不必要的打扰,同时没有压住真正重要的信息。</p>
-  <div class="metricgrid">
-    <div class="metric"><b>无效播报率下降</b>用户反馈"不该播"的比例降低。</div>
+  <h2>如何验证 Calm Brief 是否真的有价值？</h2>
+  <p class="lead mut">Calm Brief 的成功不应该只看“播报了多少条”，而要看它是否减少了不必要的打扰，同时没有压住真正重要的信息。</p>
+  <div class="metric-grid">
+    <div class="metric"><b>无效播报率下降</b>用户反馈“不该播”的比例降低。</div>
     <div class="metric"><b>重要消息漏播率可控</b>会议变更、家人消息、紧急工作通知不能被大量压住。</div>
-    <div class="metric"><b>用户持续开启率</b>用户是否愿意长期打开,而不是体验几天后关闭。</div>
+    <div class="metric"><b>用户持续开启率</b>用户是否愿意长期打开，而不是体验几天后关闭。</div>
     <div class="metric"><b>播报后查看率</b>被播报的信息是否确实值得进一步查看。</div>
     <div class="metric"><b>主观打扰感下降</b>用户是否觉得耳机更安静、更懂场合。</div>
   </div>
   <div class="path">
     <div class="node">用户需求</div><span class="arr">→</span><div class="node">场景痛点</div><span class="arr">→</span><div class="node">AI 判断</div><span class="arr">→</span><div class="node">韶音机会</div><span class="arr">→</span><div class="node">P0 验证</div>
   </div>
-  <div class="box"><div class="l">最终总结</div><p>Calm Brief 的核心不是让耳机变得更吵,而是让耳机更懂场合:在合适的时间,只把真正重要的信息送到用户耳边。</p></div>
-  <div class="card" style="margin-top:14px"><div class="h3">一句话讲清楚</div><p class="cap">对于全天佩戴开放式耳机、经常不方便看手机的用户,Calm Brief 通过 AI 判断通知的重要性、紧急性、场景打断成本和隐私风险,只在必要时进行 5-8 秒一句话播报,帮助用户减少无效打扰,同时不漏掉真正重要的信息。</p></div>
+  <div class="card" style="margin-top:14px;border-color:#cdeee6;background:linear-gradient(180deg,var(--teal-soft),#fff)"><div class="h3">MVP 验证方式：与系统默认播报规则做对照</div><p class="cap">可以将 Calm Brief 与系统默认通知播报 / App 级开关规则进行 A/B 对照，比较无效播报率、重要消息漏播率、持续开启率和主观打扰感，验证 AI 的单条通知级判断是否真的优于粗颗粒度规则。</p></div>
+  <div class="box"><div class="l">最终总结</div><p>Calm Brief 的核心不是让耳机变得更吵，而是让耳机更懂场合：在合适的时间，只把真正重要的信息送到用户耳边。</p></div>
+  <div class="card" style="margin-top:14px"><div class="h3">一句话讲清楚</div><p class="cap">对于全天佩戴开放式耳机、经常不方便看手机的用户，Calm Brief 通过 AI 判断通知的重要性、紧急性、场景打断成本和隐私风险，只在必要时进行 5–8 秒一句话播报，帮助用户减少无效打扰，同时不漏掉真正重要的信息。</p></div>
 </section>
 
 <!-- 附录 证据来源 -->
 <section class="slide appendix">
   <span class="sn">附录</span>
   <span class="kick">证据来源表</span>
-  <h2 style="font-size:26px">Evidence Sources(访问日期 2026-06-08)</h2>
+  <h2 style="font-size:26px">Evidence Sources（访问日期 2026-06-08）</h2>
   <table style="font-size:12.5px">
     <thead><tr><th>编号</th><th>平台</th><th>证据摘要</th><th>链接</th></tr></thead>
     <tbody>
