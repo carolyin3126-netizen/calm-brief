@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>AI 时代韶音声音入口与佩戴场景的产品形态探索 · 耳边简报</title>
+<title>AI 时代开放式耳机的声音入口探索 · Calm Brief</title>
 <style>
   :root{
     --bg:#f5f8fb; --surface:#ffffff; --surface2:#fbfcfe;
@@ -144,8 +144,29 @@
   .fcb.yes{background:var(--teal-soft);border:1px solid #b9efe2;color:#0c5b51}
   .fcb.no{background:#f1f4f8;border:1px solid var(--line);color:#6b7785}
   .suppgrid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-top:24px}
-  @media(max-width:820px){.fcsplit,.fcbranch,.suppgrid{grid-template-columns:1fr}}
-  @media(max-width:820px){.grid2,.grid3,.stat,.twocol{grid-template-columns:1fr}.slide{padding:54px 24px}table{font-size:12px}.farrowx{transform:rotate(90deg);min-height:14px}}
+  .tight{margin-top:14px}.tight .card{padding:18px}.tight .h3{font-size:16px}
+  .formula{background:#fff;border:1.5px solid #b9efe2;border-radius:16px;padding:18px 22px;margin-top:16px;
+    box-shadow:var(--shadow-sm);font-weight:800;color:var(--ink);font-size:clamp(16px,2vw,22px);line-height:1.45}
+  .formula b{color:var(--teal)}
+  .mini-list{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-top:14px}
+  .mini{background:#fff;border:1px solid var(--line);border-radius:12px;padding:13px 15px;box-shadow:var(--shadow-sm)}
+  .mini b{display:block;color:var(--ink);font-size:13.5px;margin-bottom:4px}
+  .mini span{display:block;color:var(--mut);font-size:12.5px;line-height:1.45}
+  .compact-table{font-size:12px;margin-top:12px}.compact-table th,.compact-table td{padding:9px 10px}
+  .split3{display:grid;grid-template-columns:1.05fr .95fr;gap:16px;margin-top:16px;align-items:start}
+  .metricgrid{display:grid;grid-template-columns:repeat(5,1fr);gap:10px;margin-top:12px}
+  .metric{background:#fff;border:1px solid var(--line);border-radius:12px;padding:12px 10px;box-shadow:var(--shadow-sm);font-size:12px;color:var(--mut);line-height:1.4}
+  .metric b{display:block;color:var(--teal);font-size:12.5px;margin-bottom:4px}
+  .dense{padding-top:48px;padding-bottom:48px}
+  .dense h2{font-size:clamp(22px,3vw,34px);margin-bottom:12px}
+  .dense .lead{font-size:clamp(15px,1.55vw,18px)}
+  .dense .card{padding:16px}.dense .box{padding:16px 20px;margin-top:14px}
+  .dense .formula{padding:14px 18px;margin-top:12px;font-size:clamp(15px,1.7vw,19px)}
+  .dense .grid2,.dense .grid3,.dense .twocol{gap:12px;margin-top:14px}
+  .dense .codeblk{font-size:11.2px;padding:12px 14px;line-height:1.5}
+  .dense table{margin-top:10px}
+  @media(max-width:820px){.fcsplit,.fcbranch,.suppgrid,.mini-list,.split3,.metricgrid{grid-template-columns:1fr}}
+  @media(max-width:820px){.grid2,.grid3,.stat,.twocol{grid-template-columns:1fr}.slide{padding:54px 24px}.dense{padding:42px 24px}table{font-size:12px}.farrowx{transform:rotate(90deg);min-height:14px}}
 </style>
 </head>
 <body>
@@ -154,11 +175,13 @@
 <!-- 1 封面 -->
 <section class="slide hero">
   <span class="sn">01 / 09</span>
-  <span class="kick">Shokz · 声音入口 × 佩戴场景</span>
-  <h1>AI 时代<br>韶音声音入口与佩戴场景的产品形态探索</h1>
-  <p class="lead" style="margin-top:24px">聚焦一个更具体的问题:<strong>AI 如何根据外界环境、用户状态与信息优先级,判断这条信息该不该打断用户</strong>——以「耳边简报 Calm Brief」为例。</p>
+  <span class="kick">Shokz · Calm Brief / 耳边简报</span>
+  <h1>AI 时代开放式耳机的声音入口探索</h1>
+  <p class="lead" style="margin-top:10px"><strong>以 Calm Brief 智能通知播报为例</strong></p>
+  <p class="lead" style="margin-top:18px">Calm Brief 是一个面向开放式耳机的 <strong>AI 通知分流功能</strong>。它不朗读所有通知,而是结合用户当前状态、场景与通知语义,判断哪一条真正值得被听见。</p>
+  <div class="box" style="max-width:840px"><div class="l">核心定位</div><p>不是让耳机说得更多,而是让耳机在对的时刻,只说该说的那一句。</p></div>
   <div style="margin-top:22px">
-    <span class="pill">本次只谈「输出层」</span><span class="pill">真实调研</span><span class="pill">开放式耳机的新角色</span>
+    <span class="pill">输出层探索</span><span class="pill">开放式耳机</span><span class="pill">通知分流</span><span class="pill">一句话播报</span><span class="pill">低打扰信息层</span>
   </div>
 </section>
 
@@ -167,12 +190,12 @@
   <span class="sn">02 / 09</span>
   <span class="kick">命题</span>
   <h2>AI 正在重塑人机交互的输入与输出方式</h2>
-  <p class="lead mut">过去十几年,我们靠<strong>点屏幕、打字</strong>和机器沟通——在 AI 面前,这套方式显得越来越笨拙。今天人们已经开始"<strong>口喷</strong>"写代码(voice / web coding)、用一句话让 AI 生成内容。<span class="hl">输入和输出,都在被重写。</span></p>
+  <p class="lead mut">过去十几年,我们主要通过<strong>点击、打字、滑动</strong>与机器沟通。但在 AI 时代,交互正在从"用户主动操作"转向"系统理解意图与场景后的适时响应"。</p>
   <div class="grid2">
-    <div class="card"><span class="ic">⌨️→🎙️</span><div class="h3">输入侧</div><p class="cap">从打字、点按 → 语音、自然语言、环境感知。"口喷"正在取代键盘。</p></div>
-    <div class="card" style="border-color:#cdeee6;background:linear-gradient(180deg,var(--teal-soft),#fff)"><span class="ic">📃→🗣️</span><div class="h3">输出侧 <span style="color:var(--teal);font-size:13px">← 当前探索聚焦在这里</span></div><p class="cap">从看屏幕、逐字朗读 → 判断后、在恰当时机、只说一句的克制播报。</p></div>
+    <div class="card"><span class="ic">⌨️→🎙️</span><div class="h3">输入侧</div><p class="cap">从键盘与点按,走向语音、自然语言与多模态输入。用户不再需要学习复杂操作,而是用更接近人的方式表达需求。</p></div>
+    <div class="card" style="border-color:#cdeee6;background:linear-gradient(180deg,var(--teal-soft),#fff)"><span class="ic">📃→🗣️</span><div class="h3">输出侧 <span style="color:var(--teal);font-size:13px">← 当前探索聚焦在这里</span></div><p class="cap">从屏幕展示和逐字朗读,走向基于场景判断后的主动输出。系统不只是"把信息给用户",而是判断"现在该不该打扰用户"。</p></div>
   </div>
-  <div class="box"><div class="l">本次范围</div><p>输入和输出都值得做,但今天我只深入<strong>输出这一层</strong>:AI 时代,耳机该怎么"说"给你听?</p></div>
+  <div class="box"><div class="l">本次范围</div><p>输入和输出都值得探索,但本次只聚焦<strong>输出层</strong>:AI 时代,开放式耳机应该如何"说给用户听"?</p></div>
 </section>
 
 <!-- 2.5 为什么需要语音播报 -->
@@ -185,8 +208,9 @@
     <div class="card"><span class="ic">✋</span><div class="h3">手被占用</div><p class="cap">做饭、拎东西、运动、敲键盘——不方便打字点按。</p></div>
     <div class="card"><span class="ic">🧠</span><div class="h3">注意力在别处</div><p class="cap">专注工作、面对面聊天——掏手机就分心、就失礼。</p></div>
   </div>
-  <p class="lead" style="margin-top:22px">这些时刻,<strong>"用听的"是唯一不打断当前动作的信息通道</strong> —— 这就是耳机语音播报<span style="white-space:nowrap">存在的理由</span>。</p>
-  <div class="box"><div class="l">需求是真的</div><p>苹果、谷歌、三星都内置了"语音播报",用户也主动打开它——说明问题不在"<strong>该不该用声音告诉你</strong>",而在"<strong>怎么告诉</strong>"。这是一个对<strong>全天佩戴 + 高频消息</strong>人群更强的中高优先级机会。</p></div>
+  <p class="lead" style="margin-top:22px">这些时刻,<strong>"用听的"是唯一不打断当前动作的信息通道</strong> —— 这就是耳机语音播报存在的理由。</p>
+  <div class="box"><div class="l">关键转折</div><p>真正的问题不是"要不要播报",而是<strong>该播什么、何时播、播多短</strong>。如果耳机只是把所有通知逐条读出来,语音播报会从帮助变成新的打扰。</p></div>
+  <div class="formula"><b>语音是入口,AI 是筛选器。</b> AI 的价值不在于"会读通知",而在于理解当前场景与通知内容,筛选出此刻真正值得进入耳朵的信息。</div>
 </section>
 
 <!-- 3 痛点:个人案例 + 用户调研(合并) -->
@@ -194,7 +218,16 @@
   <span class="sn"></span>
   <span class="kick">日常痛点 · 不止是我</span>
   <h2>智能播报"照单全念",把"看的过载"变成了"听的过载"</h2>
-  <p class="lead">我用 AirPods Pro 开了语音播报,本想解放眼睛——结果它<strong>不分轻重地念出每一条</strong>:群消息、广告、验证码全念,要紧的反而被淹没;烦到只想关掉,可关掉又怕漏。</p>
+  <p class="lead">我用 AirPods Pro 开了语音播报,本想解放眼睛——结果它<strong>不分轻重地念出每一条</strong>:群消息、广告、验证码全念,要紧的反而被淹没。现有语音播报的问题不是没有声音,而是没有判断:它把屏幕上的信息过载,直接搬到了耳朵里。</p>
+  <div class="card" style="border-color:#cdeee6;background:linear-gradient(180deg,var(--teal-soft),#fff);margin-top:16px">
+    <div class="h3">核心用户是谁?</div>
+    <p class="cap">不是偶尔戴耳机的人,而是长时间佩戴开放式耳机、通知高频、经常在通勤 / 办公 / 运动之间切换的人。</p>
+    <div class="mini-list">
+      <div class="mini"><b>全天在场</b><span>耳机佩戴时间长,通知确实会持续进入耳朵。</span></div>
+      <div class="mini"><b>消息高频</b><span>工作、社交、日程、验证码、群消息混杂。</span></div>
+      <div class="mini"><b>场景切换多</b><span>走路、开会、运动、专注工作时,对打扰的容忍度不同。</span></div>
+    </div>
+  </div>
   <div class="stat">
     <div class="s"><div class="n">~10<span style="font-size:15px">分钟</span></div><div class="t">人均收到一条通知的间隔 <span class="ev">[D2]</span></div></div>
     <div class="s"><div class="n">23<span style="font-size:15px">分钟</span></div><div class="t">每次被打断后重回专注所需 <span class="ev">[D1]</span></div></div>
@@ -207,7 +240,7 @@
 <section class="slide">
   <span class="sn">05 / 09</span>
   <span class="kick">用户旅程图 · 现状(输出视角)</span>
-  <h2>被"逐条念"切碎的一天 —— 情绪全天低位</h2>
+  <h2>被"逐条念"切碎的一天:打断成本不断累积</h2>
   <div class="jwrap">
     <div class="jmap">
       <div class="jrl jh"></div>
@@ -231,14 +264,14 @@
       <div class="jc jtouch">当众念 / 全静音</div>
       <div class="jc jtouch">翻聊天记录补漏</div>
 
-      <div class="jrl">情绪曲线</div>
+      <div class="jrl">注意力损耗 /<br>打断成本</div>
       <div class="jemo">
         <svg viewBox="0 0 1000 116" xmlns="http://www.w3.org/2000/svg">
           <line x1="0" y1="104" x2="1000" y2="104" stroke="#e6ecf3"/>
           <polyline points="100,52 300,70 500,40 700,64 900,58" fill="none" stroke="#ef5a6a" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
           <g fill="#ef5a6a"><circle cx="100" cy="52" r="5"/><circle cx="300" cy="70" r="5"/><circle cx="500" cy="40" r="5"/><circle cx="700" cy="64" r="5"/><circle cx="900" cy="58" r="5"/></g>
           <g font-size="18" text-anchor="middle"><text x="100" y="34">😣</text><text x="300" y="52">😤</text><text x="500" y="22">😒</text><text x="700" y="46">😟</text><text x="900" y="40">😮‍💨</text></g>
-          <g fill="#9aa6b4" font-size="11.5" text-anchor="middle" font-family="PingFang SC,sans-serif"><text x="100" y="99">烦躁</text><text x="300" y="99">被打断</text><text x="500" y="99">嫌麻烦</text><text x="700" y="99">尴尬/分心</text><text x="900" y="99">疲惫不安</text></g>
+          <g fill="#9aa6b4" font-size="11.5" text-anchor="middle" font-family="PingFang SC,sans-serif"><text x="100" y="99">低价值打扰</text><text x="300" y="99">心流中断</text><text x="500" y="99">安全风险</text><text x="700" y="99">隐私风险</text><text x="900" y="99">补漏成本</text></g>
         </svg>
       </div>
 
@@ -249,15 +282,16 @@
       <div class="jc"><div class="jpain">私人消息被当众念出尴尬;静音又怕漏<span class="pe ev">[S2][A2]</span></div></div>
       <div class="jc"><div class="jpain">被切碎一整天,不确定漏没漏<span class="pe ev">[D1]</span></div></div>
 
-      <div class="jrl">机会点 →<br>耳边简报</div>
-      <div class="jc"><div class="jopp"><span class="jsay">"7 条压住,1 条要紧"</span>,只播该说的</div></div>
-      <div class="jc"><div class="jopp">默默压住,只在真紧急时一句</div></div>
-      <div class="jc"><div class="jopp">只播极重要的最短一句,其余沉默</div></div>
-      <div class="jc"><div class="jopp">感知在会中 → 非紧急静默,紧急才短播</div></div>
-      <div class="jc"><div class="jopp"><span class="jsay">今天只播 6 条要紧消息</span>,减少打断</div></div>
+      <div class="jrl">耳边简报<br>机会点</div>
+      <div class="jc"><div class="jopp">只播日程和紧急消息</div></div>
+      <div class="jc"><div class="jopp">低价值通知静默</div></div>
+      <div class="jc"><div class="jopp">长消息压缩成一句</div></div>
+      <div class="jc"><div class="jopp">非白名单不播内容</div></div>
+      <div class="jc"><div class="jopp">只回顾真正错过的重要信息</div></div>
     </div>
   </div>
-  <p class="imgnote">情绪曲线全程压在低位 = "逐条念所有信息"把"看的过载"变成了"听的过载";最下一行即「耳边简报」用<b>通知分流 + 一句话播报 + 场景沉默</b>接住痛点。P0 不做 30 分钟简报,证据编号见末页来源表。</p>
+  <div class="formula"><b>打断成本</b> = 当前任务专注度 × 场景安全性 × 消息长度 × 隐私风险</div>
+  <p class="imgnote">同一条通知,在不同场景下打断成本完全不同。通勤过马路时,长播报会影响安全;开会时,私人消息会带来尴尬;专注工作时,一条无关播报可能打断心流。因此,耳机不能只判断"有没有通知",而要判断"此刻适不适合说"。</p>
 </section>
 
 <!-- 6 竞品解决方案 -->
@@ -265,53 +299,53 @@
   <span class="sn"></span>
   <span class="kick">竞品解决方案</span>
   <h2>现有方案要么"有语音但判断笨",要么"判断聪明但困在屏幕"</h2>
-  <table>
-    <thead><tr><th>方案</th><th>输入</th><th>判断</th><th>输出</th><th>控制方式</th><th>缺口</th><th>对韶音启发</th></tr></thead>
+  <table class="compact-table">
+    <thead><tr><th>方案</th><th>输入</th><th>判断</th><th>输出</th><th>控制颗粒度</th><th>控制方式</th><th>缺口</th><th>对韶音启发</th></tr></thead>
     <tbody>
       <tr>
         <td><div class="brandcell"><div class="pimg" style="--bc:#1f2937"><img src="images/airpods.png" alt="AirPods" onerror="this.remove()">🎧</div><div class="bn">AirPods + Siri</div></div></td>
-        <td>系统通知</td><td><span class="no">✕</span> 规则为主</td><td>语音逐条念</td><td>按 App / 时效</td><td>不懂语义、不够克制 <span class="ev">[C1]</span></td><td>语音通道对了,判断空白</td>
+        <td>系统通知</td><td><span class="no">✕</span> 规则为主</td><td>语音逐条念</td><td>App 级 / 时效通知</td><td>按 App / 时效</td><td>不懂语义、不够克制 <span class="ev">[C1]</span></td><td>语音通道对了,判断空白</td>
       </tr>
       <tr>
         <td><div class="brandcell"><div class="pimg" style="--bc:#0071e3"><img src="images/apple-intelligence.png" alt="Apple Intelligence" onerror="this.remove()">🍎</div><div class="bn">Apple Intelligence</div></div></td>
-        <td>系统通知</td><td><span class="ok">✓</span> 摘要+优先</td><td>锁屏摘要卡(视觉)</td><td>系统级 + Focus</td><td>输出在屏幕、可靠性敏感 <span class="ev">[C2][C3]</span></td><td>判断方向对,耳边输出未完成</td>
+        <td>系统通知</td><td><span class="ok">✓</span> 摘要+优先</td><td>锁屏摘要卡(视觉)</td><td>通知组 / Focus / 摘要卡片</td><td>系统级 + Focus</td><td>输出在屏幕、可靠性敏感 <span class="ev">[C2][C3]</span></td><td>判断方向对,耳边输出未完成</td>
       </tr>
       <tr>
         <td><div class="brandcell"><div class="pimg" style="--bc:#34a853"><img src="images/pixel-buds.png" alt="Pixel Buds" onerror="this.remove()">🎧</div><div class="bn">Pixel Buds</div></div></td>
-        <td>系统通知</td><td><span class="no">✕</span> 规则为主</td><td>语音播报</td><td>按 App 开关</td><td>仍像"把屏幕念出来" <span class="ev">[P1][P2]</span></td><td>需要语义分流</td>
+        <td>系统通知</td><td><span class="no">✕</span> 规则为主</td><td>语音播报</td><td>App 级开关</td><td>按 App 开关</td><td>仍像"把屏幕念出来" <span class="ev">[P1][P2]</span></td><td>需要语义分流</td>
       </tr>
       <tr>
         <td><div class="brandcell"><div class="pimg" style="--bc:#1428a0"><img src="images/galaxy-buds.png" alt="Galaxy Buds" onerror="this.remove()">🎧</div><div class="bn">Galaxy Buds</div></div></td>
-        <td>系统通知</td><td><span class="no">✕</span> 规则为主*</td><td>朗读通知</td><td>按 App / 路由</td><td>用户仍在求"别全念" <span class="ev">[S1][S2]</span></td><td>控制不该只停在 App 粒度</td>
+        <td>系统通知</td><td><span class="no">✕</span> 规则为主*</td><td>朗读通知</td><td>App 级 / 路由设置</td><td>按 App / 路由</td><td>用户仍在求"别全念" <span class="ev">[S1][S2]</span></td><td>控制不该只停在 App 粒度</td>
       </tr>
       <tr class="shokzrow">
         <td><div class="brandcell"><div class="pimg big" style="--bc:var(--teal)"><img src="images/shokz.png" alt="Shokz" onerror="this.remove()">🌿</div><div class="bn">韶音 · 耳边简报</div></div></td>
-        <td>消息类通知</td><td><span class="ok">✓</span> 语义"值不值得打断"</td><td>克制一句话 + 场景沉默</td><td>语义 + 场景 + 联系人</td><td>—— 把两半补齐</td><td>开放式独有的低打扰输出</td>
+        <td>消息类通知</td><td><span class="ok">✓</span> 语义"值不值得打断"</td><td>克制一句话 + 场景沉默</td><td>单条通知级 + 当前场景 + 联系人关系</td><td>语义 + 场景 + 联系人</td><td>—— 把两半补齐</td><td>开放式独有的低打扰输出</td>
       </tr>
     </tbody>
   </table>
-  <div class="swnote">🔘 关键:现有方案的"控制",本质是<b>设置里的开关</b> —— 你去设置里勾选「哪些 App 能播、什么时段能播」,是一种 <b>1 / 0 的粗粒度开关</b>;它不读单条消息的内容,也不判断轻重。<b>真正缺的是"逐条看内容、判断值不值得打断"的那一层。</b></div>
-  <div class="concl">结论:<span class="hl2">没人把「语义判断 + 克制语音 + 场景感知 + 全天开放式」合在一起</span> —— 这正是韶音的空白格。</div>
+  <div class="swnote">🔘 关键:现有方案的问题不是没有语音,也不是没有 AI,而是两者没有在耳机场景中闭环:有语音的方案,判断还停留在 App 开关;有 AI 判断的方案,输出仍主要停留在屏幕。</div>
+  <div class="concl">Calm Brief 的差异点,是把控制颗粒度从"<span class="hl2">哪个 App 能播</span>",推进到"<span class="hl2">这条通知此刻值不值得播</span>"。</div>
   <p class="imgnote" style="margin-top:12px">*三星 One UI 8.5 已在补"AI 通知摘要",并用 Galaxy Buds 做音频简报(Now Brief)—— 见下页"为什么这是机会"。</p>
 </section>
 
 <!-- 6.5 为什么这是机会 -->
-<section class="slide hero">
+<section class="slide hero dense">
   <span class="sn"></span>
   <span class="kick">为什么这是机会</span>
-  <h2>当前机会点</h2>
-  <div class="box" style="margin-top:10px"><div class="l">机会主张</div><p>当 AI 能理解信息轻重,开放式耳机就不再只是播放设备,而可能成为一个<strong>克制的信息输出层</strong>。</p></div>
+  <h2>当前机会点:重新定义"这条通知该不该进入耳朵"</h2>
+  <div class="box" style="margin-top:10px"><div class="l">机会主张</div><p>当 AI 能理解信息轻重,开放式耳机就不再只是播放设备,而可能成为一个<strong>克制的信息输出层</strong>。Calm Brief 不是让耳机说得更多,而是让耳机学会看场合说话。</p></div>
+  <div class="formula"><b>是否值得打断</b> = 信息重要性 + 时间敏感性 + 与我的相关性 - 打断成本 - 隐私风险</div>
   <div class="grid2" style="margin-top:18px">
     <div class="card">
       <span class="ic">🧭</span>
-      <div class="h3">从人的本质需求出发</div>
-      <p class="cap">人不是想"听更多通知",而是想在<strong>不看屏幕、不被打断</strong>的情况下,知道真正重要的事。</p>
+      <div class="h3">从真实世界的注意力出发</div>
+      <p class="cap">我不是从"竞品有什么功能"倒推,而是从用户在真实世界中的注意力分配出发,重新定义耳机播报的判断标准。</p>
     </div>
     <div class="card" style="border-color:#cdeee6;background:linear-gradient(180deg,var(--teal-soft),#fff)">
       <span class="ic">⚖️</span>
-      <div class="h3">把问题拆到底层</div>
-      <p class="cap" style="font-weight:800;color:var(--ink)">是否值得打断 = 信息重要性 + 时间敏感性 + 与我的相关性 - 打断成本 - 隐私风险</p>
-      <p class="cap" style="margin-top:10px">传统规则只能看 App、联系人、关键词;AI 才有机会理解语义和上下文。</p>
+      <div class="h3">AI 的核心不是生成摘要</div>
+      <p class="cap">用户真正需要的不是听到更多通知,而是在不看屏幕、不被打断的情况下,知道真正重要的事。因此,AI 播报的核心是<strong>判断是否值得打断</strong>。</p>
     </div>
   </div>
   <div class="grid3">
@@ -319,15 +353,16 @@
     <div class="card" style="border-color:#cdeee6;background:linear-gradient(180deg,var(--teal-soft),#fff)"><span class="ic">🇨🇳</span><div class="h3">中国窗口正开</div><p class="cap">海外 AI 的通知功能在中国大陆受监管限制、迟迟未全量(苹果仍在等审批、与阿里合作)。<b>韶音作为中国品牌,可在主场先动。</b><span class="ev">[N2]</span></p></div>
     <div class="card"><span class="ic">📈</span><div class="h3">开放式品类爆发</div><p class="cap">"open-ear earbuds"两年搜索 <b>+8200%</b>。窗口开着,不抢就被别人定义。<span class="ev">[N4]</span></p></div>
   </div>
-  <div class="box"><div class="l">P0 判断</div><p>所以第一版只验证最核心假设:<strong>AI 能不能比系统规则更准确地判断"这条信息该不该进入耳朵"</strong>。先做通知分流和一句话播报,不一次做成完整助手。</p></div>
+  <div class="box"><div class="l">P0 判断</div><p>所以 P0 不做完整助手,只验证最小闭环:<strong>AI 能否基于通知语义与当前场景,比系统规则更准确地判断"这条信息该不该进入耳朵"</strong>。</p></div>
 </section>
 
 <!-- 7 韶音机会点 -->
-<section class="slide">
+<section class="slide dense">
   <span class="sn"></span>
   <span class="kick">韶音机会点</span>
   <h2 style="font-size:clamp(24px,3.4vw,38px)">韶音的机会不是让耳机多说话,而是让耳机知道什么时候不该说话</h2>
-  <p class="mut" style="max-width:74ch">开放式耳机的价值,不是把入耳耳机的功能复制一遍,而是成为<strong>现实场景中的低打扰信息层</strong>。这个方向优先适配 OpenFit / OpenDots / OpenComm 这类日常开放式、长时间佩戴产品,不优先放在游泳或纯专业运动线。</p>
+  <p class="mut" style="max-width:74ch">开放式耳机的价值,不是把入耳耳机的功能复制一遍,而是成为<strong>现实场景中的低打扰信息层</strong>。优先落在 OpenFit / OpenDots / OpenComm 这类日常开放式产品线,而不是游泳或纯专业运动线,因为通知管理的价值来自"长时间在场"和"多场景切换"。</p>
+  <div class="box"><div class="l">为什么适合韶音做</div><p>手机知道通知内容,但不一定知道用户此刻是否适合被耳朵打断。耳机更接近真实场景:是否佩戴、是否运动、是否正在通勤、是否处于需要低打扰的状态。<strong>手机负责信息供给,耳机负责最后一厘米的打断决策。</strong></p></div>
   <div class="isnot">
     <div class="ic2 is"><b>机会是什么</b>做现实场景里"全天在场、不隔绝、克制"的信息输出层。</div>
     <div class="ic2 not"><b>不是什么</b>不是把入耳功能复制一遍,不是"耳机里的 ChatGPT",不是让耳机更聒噪。</div>
@@ -337,62 +372,74 @@
       <div class="ph">为什么是韶音</div>
       <div class="pcard"><b>🌿 开放式输出</b><span>不隔绝环境,适合通勤、办公、走路等真实世界场景。</span></div>
       <div class="pcard"><b>🕐 全天佩戴</b><span>通知管理只有在耳机长时间在场时才形成价值。</span></div>
-      <div class="pcard"><b>📍 场景信号</b><span>佩戴状态、运动状态、时间日程,可用于决定是否播报。</span></div>
+      <div class="pcard"><b>📍 场景信号</b><span>佩戴状态、运动状态、时间和日程,帮助判断此刻适不适合说。</span></div>
     </div>
     <div class="panel right">
       <div class="ph">产品原则</div>
       <div class="pcard"><b>不重要的不说</b><span>低价值通知直接静默。</span></div>
       <div class="pcard"><b>重要的说短</b><span>5–8 秒一句话,绝不逐字念。</span></div>
-      <div class="pcard"><b>不确定就降级</b><span>宁可提示"有一条来自 X 的消息",也不臆断内容。</span></div>
-      <div class="pcard"><b>边界先收窄</b><span>P0 只验证分流和一句话播报;语音回复、用户纠错、定时简报放到 P1/P2。</span></div>
+      <div class="pcard"><b>不确定就降级</b><span>低置信度或高隐私内容,只播"来自 X 的一条消息",不总结正文。</span></div>
+      <div class="pcard"><b>边界先收窄</b><span>P0 只验证通知分流和一句话播报;更多 App、用户反馈学习放到 P1/P2。</span></div>
     </div>
   </div>
 </section>
 
 <!-- 8 产品定义与执行 -->
-<section class="slide">
+<section class="slide dense">
   <span class="sn"></span>
   <span class="kick">产品定义与执行方案</span>
-  <h2 style="margin-bottom:6px">耳边简报:判断一条消息「是否值得打断你」</h2>
-  <p class="mut" style="margin-bottom:4px">一条流水线:从通知涌入,到分类、语义判断、场景把握,最后只输出该说的那一句。</p>
-  <div class="fc">
-    <div class="fcbox in">📥 通知涌入<small>输入 · 采集:App 来源 · 发件人 · 文本 · 时间</small></div>
-    <div class="fcarrow">↓</div>
-    <div class="fcbox">
-      <div class="fct">① 输入与分类 · 端侧规则快筛</div>
-      <div class="fcl"><b>判断</b>是否白名单 / 关键词 / 时间敏感?是否明显低价值(广告、验证码)?</div>
-      <div class="fcl outl"><b>输出</b>初步标签:放行进入判断 / 直接静默</div>
-    </div>
-    <div class="fcarrow">↓</div>
-    <div class="fcbox core">
-      <div class="fct">② 核心判断层 · 语义判断 ⊕ 场景感知(同层结合)</div>
-      <div class="fcsplit">
-        <div class="fchalf"><b>🧠 语义判断</b><span>判断:是否直接找我?有无时间压力?是否需我行动?</span><span class="g">采集:消息文本语义</span></div>
-        <div class="fchalf"><b>📍 场景感知</b><span>判断:此刻能不能打断你?</span><span class="g">采集:佩戴/运动状态(IMU)· 时间 · 日程</span></div>
+  <h2 style="margin-bottom:6px">P0:只验证通知分流 + 一句话播报</h2>
+  <p class="mut" style="margin-bottom:4px">P0 只验证一个核心假设:AI 能不能比系统规则更准确地判断"这条通知该不该进入耳朵"。</p>
+  <div class="split3">
+    <div>
+      <div class="fcbox core">
+        <div class="fct">最小闭环</div>
+        <div class="flow" style="margin-top:8px">
+          <div class="fstep">通知到达</div><span class="farr">→</span>
+          <div class="fstep">规则快筛</div><span class="farr">→</span>
+          <div class="fstep">语义 + 场景判断</div><span class="farr">→</span>
+          <div class="fstep"><b>一句话播报 / 静默</b></div>
+        </div>
+        <div class="fcl" style="margin-top:12px"><b>模型栈</b>安卓 NotificationListenerService + 端侧规则 + 小而快中文 LLM(Qwen3 1.7B/4B、豆包/DeepSeek 轻量) + 系统 TTS。</div>
       </div>
-      <div class="fcl outl"><b>结合输出</b>priority(urgent / ignore)· reason · should_interrupt · 一句话摘要</div>
+      <table class="compact-table">
+        <thead><tr><th>等级</th><th>动作</th><th>示例</th></tr></thead>
+        <tbody>
+          <tr><td><b>Ignore</b></td><td>静默,不播报</td><td>广告、验证码、群聊闲聊</td></tr>
+          <tr><td><b>Hold</b></td><td>保留在手机通知中,不播报</td><td>非紧急群消息、普通资讯</td></tr>
+          <tr><td><b>Interrupt</b></td><td>立即一句话播报</td><td>临时改会、家人紧急消息</td></tr>
+          <tr><td><b>Safe Fallback</b></td><td>只播来源,不播内容</td><td>高隐私、低置信度、系统隐藏内容</td></tr>
+        </tbody>
+      </table>
     </div>
-    <div class="fcarrow">↓</div>
-    <div class="fcdiamond">③ 输出决策:该现在打断你吗?</div>
-    <div class="fcbranch">
-      <div class="fcb yes">✓ 值得 → <b>一句话即时播报</b><span>输出:5–8 秒,只说重点</span></div>
-      <div class="fcb no">✕ 不值得 → <b>保持沉默</b><span>不打扰,默默放过</span></div>
+    <div>
+      <div class="card">
+        <div class="h3">模型不读全文给用户,只输出结构化判断</div>
+        <div class="codeblk">{
+  <span class="k">"priority"</span>: <span class="v">"urgent / normal / ignore"</span>,
+  <span class="k">"should_interrupt"</span>: <span class="v">true</span>,
+  <span class="k">"reason"</span>: <span class="v">"明确时间压力,需要行动"</span>,
+  <span class="k">"summary"</span>: <span class="v">"张经理提醒你 3 点会议提前到 2 点半"</span>,
+  <span class="k">"confidence"</span>: <span class="v">0.86</span>,
+  <span class="k">"privacy_level"</span>: <span class="v">"low / medium / high"</span>
+}</div>
+        <p class="cap" style="margin-top:10px">只有 should_interrupt=true、confidence 足够高、privacy_level 不高时,才进入一句话播报;否则静默、暂存,或降级为只播来源。</p>
+      </div>
     </div>
   </div>
-  <div class="suppgrid">
-    <div class="card"><div class="h3" style="color:var(--green)">P0 做</div><p class="cap">安卓优先 · 1–2 个消息类 App · 通知分流 · 即时一句话播报 · 静默压住低价值通知 · 重要联系人白名单。</p></div>
-    <div class="card"><div class="h3" style="color:var(--red)">P0 不做</div><p class="cap">不做语音回复(属输入)· 不做 30 分钟简报 · 不做全 App · 不做长对话助手 · 不全天监听 · 不保存完整聊天记录。</p></div>
-    <div class="card"><div class="h3" style="color:var(--teal)">模型栈 & 边界</div><p class="cap">小而快中文 LLM(Qwen3 1.7B/4B、豆包/DeepSeek 轻量)+ 端侧规则 + 系统 TTS。若通知内容被系统隐藏,降级为"来自 X/App 的消息",不臆断、不保存完整内容。<b style="color:var(--teal)">P1 再做语音回复 / 用户纠错 / 定时简报。</b></p></div>
+  <div class="metricgrid">
+    <div class="metric"><b>无效播报率下降</b>用户觉得"不该播"的比例降低。</div>
+    <div class="metric"><b>漏播率可控</b>真正重要的信息不能被大量压住。</div>
+    <div class="metric"><b>持续开启率</b>用户是否愿意长期打开。</div>
+    <div class="metric"><b>播报后查看率</b>被播报的信息是否值得进一步查看。</div>
+    <div class="metric"><b>打扰感下降</b>用户觉得耳机更安静、更懂场合。</div>
   </div>
-</section>
-
-<!-- 9 结尾 -->
-<section class="slide hero">
-  <span class="sn">09 / 09</span>
-  <span class="kick">总结</span>
-  <h2 style="font-size:clamp(26px,4vw,44px);line-height:1.25">从"逐字念",到一个<span style="color:var(--teal)">懂你处境的信息层</span></h2>
-  <p class="lead" style="margin-top:18px">韶音要做的,不是又一个会说话的耳机——而是让耳机学会"看场合说话":<strong>在感知你所处环境的前提下,用 AI 的语音,在嘈杂的信息洪流里,以尽可能少的打断,守住你当下的专注。</strong></p>
-  <div class="box" style="margin-top:24px"><p style="font-size:clamp(19px,2.3vw,27px);font-weight:800;color:var(--ink);line-height:1.4">不是让耳机说得更多,而是让它在对的时刻,<span class="hl">只说那一句该说的话。</span></p></div>
+  <div class="suppgrid tight">
+    <div class="card"><div class="h3" style="color:var(--green)">P0 做</div><p class="cap">安卓优先 · 1–2 个消息类 App · 通知分流 · 一句话播报 · 低价值静默 · 重要联系人白名单。</p></div>
+    <div class="card"><div class="h3" style="color:var(--red)">P0 不做</div><p class="cap">不做语音回复 · 不做 30 分钟简报 · 不做全 App · 不做长对话助手 · 不全天监听 · 不保存完整聊天记录。</p></div>
+    <div class="card"><div class="h3" style="color:var(--teal)">兜底原则</div><p class="cap">宁可少播,不要乱播。敏感 App 默认不读正文;会议/专注状态更严格;低置信度只播来源;用户可设置白名单与隐私黑名单。</p></div>
+  </div>
+  <div class="box" style="margin-top:14px"><p>手机负责信息供给,耳机负责最后一厘米的打断决策。不是让耳机说得更多,而是让它在对的时刻,只说该说的那一句。</p></div>
 </section>
 
 <!-- 附录 证据来源 -->
